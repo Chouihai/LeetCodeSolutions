@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Stack;
 
 public class LengthOfLongestSubstring {
@@ -13,16 +14,12 @@ public class LengthOfLongestSubstring {
        }
        if (list.size() ==1) return 1;
         while (list.size()>1){
-             ArrayList<Character> SubList = new ArrayList<>();
+             HashSet<Character> SubList = new HashSet<>();
              SubList.add(list.get(0));
              int k = 1;
              boolean Repeat = false;
              while(!Repeat) {
-                 for (char c : SubList) {
-                     if (c == list.get(k)) {
-                         Repeat = true;
-                     }
-                 }
+                 if (SubList.contains(list.get(k))) Repeat = true;
                  if (!Repeat) {
                      SubList.add(list.get(k));
                      k++;
