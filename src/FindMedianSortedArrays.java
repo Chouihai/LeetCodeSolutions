@@ -8,8 +8,7 @@ public class FindMedianSortedArrays {
     }
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int[] combined = new int[nums1.length+nums2.length];
-        int i = 0;
-        for (i=0; i< combined.length; i++){
+        for (int i=0; i< combined.length; i++){
             combined[i] = (i< nums1.length) ? nums1[i] : nums2[i- nums1.length];
         }
         for (int n = 1; n<combined.length; n++){
